@@ -12,26 +12,47 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App1">
         <activity
-            android:name=".GuardLogin"
+            android:name=".AcceptReject"
             android:exported="false" />
         <activity
-            android:name=".TeacherRegistration"
+            android:name=".NewRecycler"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Admin"
             android:exported="false" />
+        <activity
+            android:name=".recycler"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NotificationTest"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".GuardLogin"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TeacherRegistration"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Login"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Registration"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DayScholar"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TeacherLogin"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

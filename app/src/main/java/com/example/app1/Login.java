@@ -2,7 +2,11 @@ package com.example.app1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -20,9 +24,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
 
-    EditText mEmail,mPassword;
+    EditText mEmail, mPassword;
     Button mLoginBtn;
-    TextView mCreateBtn,forgotTextLink;
+    TextView mCreateBtn, forgotTextLink;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
 
@@ -44,27 +48,27 @@ public class Login extends AppCompatActivity {
             String email = mEmail.getText().toString().trim();
             String password = mPassword.getText().toString().trim();
 
-            if(TextUtils.isEmpty(email)){
+            if (TextUtils.isEmpty(email)) {
                 mEmail.setError("Email is Required.");
                 return;
             }
 
-            if(TextUtils.isEmpty(password)){
+            if (TextUtils.isEmpty(password)) {
                 mPassword.setError("Password is Required.");
                 return;
             }
 
-            if(password.length() < 6){
+            if (password.length() < 6) {
                 mPassword.setError("Password Must be >= 6 Characters");
                 return;
             }
             progressBar.setVisibility(View.VISIBLE);
 
             fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),DayScholar.class));
-                }else {
+                    startActivity(new Intent(getApplicationContext(), DayScholar.class));
+                } else {
                     Toast.makeText(Login.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
@@ -74,10 +78,9 @@ public class Login extends AppCompatActivity {
         });
 
         mCreateBtn.setOnClickListener(view -> {
-            startActivity(new Intent(getApplicationContext(),Registration.class));
+            startActivity(new Intent(getApplicationContext(), Registration.class));
 
         });
-
 
 
     }

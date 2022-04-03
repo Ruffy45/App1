@@ -24,7 +24,7 @@ public class TeacherLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_teacher_login);
 
         mEmail = findViewById(R.id.Lemail);
         mPassword = findViewById(R.id.Lpassword);

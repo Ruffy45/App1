@@ -6,15 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -40,7 +37,7 @@ public class DayScholar extends AppCompatActivity {
         dSection = findViewById(R.id.textInputEditText3);
         dPhone = findViewById(R.id.textInputEditText4);
         dReason = findViewById(R.id.textInputEditText5);
-        submitBtn = findViewById(R.id.button);
+        submitBtn = findViewById(R.id.button_create_notification);
         fstore = FirebaseFirestore.getInstance();
         fAuth = FirebaseAuth.getInstance();
 
@@ -96,8 +93,8 @@ public class DayScholar extends AppCompatActivity {
             });
 
 
-
-
         });
     }
+
 }
+

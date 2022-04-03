@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class TeacherRegistration extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mfullname,mRoll,mEmail,mpassword;
+    EditText mfullname,mRoll,mEmail,mpassword,mdesig;
     TextView mtextView2,mtextView,mtextView3,mphone;
     Button registerBtn;
     FirebaseAuth fAuth;
@@ -40,7 +40,7 @@ public class TeacherRegistration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_teacher_registration);
 
         mfullname     = findViewById(R.id.textInputEditText);
         mRoll         = findViewById(R.id.textInputEditText4);
@@ -51,6 +51,7 @@ public class TeacherRegistration extends AppCompatActivity {
         mtextView     = findViewById(R.id.textView);
         registerBtn   = findViewById(R.id.registerBtn);
         mphone        = findViewById(R.id.textInputEditText7);
+        mdesig        = findViewById(R.id.textInputEditText8);
 
         fAuth       =FirebaseAuth.getInstance();
         fstore      =FirebaseFirestore.getInstance();
@@ -68,25 +69,26 @@ public class TeacherRegistration extends AppCompatActivity {
             String emailid  = mEmail.getText().toString().trim();
             String rollno   = mRoll.getText().toString();
             String phone    = mphone.getText().toString();
+            String desig    = mdesig.getText().toString();
 
             if(TextUtils.isEmpty(fullname)){
                 mfullname.setError("Please enter a name");
                 return;
             }
             if(TextUtils.isEmpty(password)){
-                mfullname.setError("Please a password");
+                mpassword.setError("Please a password");
                 return;
             }
             if(TextUtils.isEmpty(rollno)){
-                mfullname.setError("Please enter your Employee Code");
+                mRoll.setError("Please enter your Employee Code");
                 return;
             }
             if(TextUtils.isEmpty(emailid)){
-                mfullname.setError("Please enter an designation");
+                mEmail.setError("Please enter an designation");
                 return;
             }
             if(TextUtils.isEmpty(phone)){
-                mfullname.setError("Please enter a phone number");
+                mphone.setError("Please enter a phone number");
                 return;
             }
             if(password.length() < 6){
@@ -122,6 +124,7 @@ public class TeacherRegistration extends AppCompatActivity {
                         user.put("fullName",fullname);
                         user.put("Designation",emailid);
                         user.put("phone",phone);
+                        user.put("Designation",desig);
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -147,6 +150,7 @@ public class TeacherRegistration extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),TeacherLogin.class));
 
         });
+
 
 
 

@@ -56,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Guard.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Registration.class);
+            Intent intent = new Intent(this, GuardLogin.class);
             startActivity(intent);
 
         });
 
         Admin.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Registration.class);
+            Intent intent = new Intent(this, NewRecycler.class);
             startActivity(intent);
 
         });
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logout(View view) {
         mFirebaseAuth.signOut();
-        Toast.makeText(MainActivity.this, "Succesfully Logged Out!",Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "Successfully Logged Out!",Toast.LENGTH_SHORT).show();
     }
 
 }
