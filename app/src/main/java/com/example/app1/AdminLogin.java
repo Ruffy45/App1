@@ -11,24 +11,25 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-public class Admin extends AppCompatActivity {
+public class AdminLogin extends AppCompatActivity{
     EditText muser,mPassword;
     Button mLoginBtn;
     ProgressBar progressBar;
     String s1="admin";
     String s2="123456";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_guard_login);
+
         muser = findViewById(R.id.Lemail);
         mPassword = findViewById(R.id.Lpassword);
         progressBar = findViewById(R.id.progressBar);
         mLoginBtn=findViewById(R.id.loginBtn);
 
         mLoginBtn.setOnClickListener(view -> {
+
             String username = muser.getText().toString().trim();
             String password = mPassword.getText().toString().trim();
 
@@ -48,15 +49,15 @@ public class Admin extends AppCompatActivity {
             }
             progressBar.setVisibility(View.VISIBLE);
             if(username.equals(s1) && password.equals(s2)){
-                Toast.makeText(Admin.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), AdminLogin.class));
+                Toast.makeText(AdminLogin.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), NewRecycler.class));
                 return;
             }
             else {
-                Toast.makeText(Admin.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminLogin.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
 
+
         });
-    }
-}
+    };}

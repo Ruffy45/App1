@@ -32,19 +32,20 @@ public class MainActivity extends AppCompatActivity {
         mEmail = findViewById(R.id.Lemail);
 
 
+
         teacher.setOnClickListener(view -> {
-            Intent intent = new Intent(this, TeacherRegistration.class);
+            Intent intent = new Intent(this, TeacherHome.class);
                     startActivity(intent);
         });
 
         Day.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Registration.class);
+            Intent intent = new Intent(this, StudentHome.class);
             startActivity(intent);
 
         });
 
         Host.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Registration.class);
+            Intent intent = new Intent(this, StudentHome.class);
             startActivity(intent);
 
         });
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Admin.setOnClickListener(view -> {
-            Intent intent = new Intent(this, NewRecycler.class);
+            Intent intent = new Intent(this, AdminLogin.class);
             startActivity(intent);
 
         });

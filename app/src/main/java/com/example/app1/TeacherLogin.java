@@ -58,7 +58,7 @@ public class TeacherLogin extends AppCompatActivity {
             fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
                     Toast.makeText(TeacherLogin.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),DayScholar.class));
+                    startActivity(new Intent(getApplicationContext(),recycler.class));
                 }else {
                     Toast.makeText(TeacherLogin.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);

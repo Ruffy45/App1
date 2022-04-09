@@ -10,6 +10,7 @@
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/drawable/round_button.xml" value="0.18" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_accept_reject.xml" value="0.22" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_admin.xml" value="0.25" />
+        <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_admin_login.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_day_scholar.xml" value="0.25" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_guard_login.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_login.xml" value="0.33" />
@@ -17,9 +18,14 @@
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_mainrecycler.xml" value="0.1" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_new_recycler.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_notification_test.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_qr.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_recycler.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_recycler_view.xml" value="0.2" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_registration.xml" value="0.25" />
+        <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_scan.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_scanner_view.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_student_home.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_teacher_home.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_teacher_login.xml" value="0.25" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/activity_teacher_registration.xml" value="0.25" />
         <entry key="..\:/Users/Anu/AndroidStudioProjects/App1/app/src/main/res/layout/list_item_single.xml" value="0.33" />

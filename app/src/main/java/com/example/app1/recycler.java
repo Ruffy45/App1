@@ -36,6 +36,7 @@ public class recycler extends AppCompatActivity {
     FirebaseAuth fAuth;
     String userID;
     FirebaseFirestore fstore;
+    FirebaseFirestore db;
 
 
 
@@ -51,6 +52,7 @@ public class recycler extends AppCompatActivity {
         acceptBtn =findViewById(R.id.button4);
         fAuth       =FirebaseAuth.getInstance();
         fstore      =FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
 
 
 
@@ -101,20 +103,16 @@ public class recycler extends AppCompatActivity {
             //OnClickListener for accept button
 
             itemView.findViewById(R.id.button4).setOnClickListener(view -> {
-                DocumentReference rollref,nameref,sectionref,UID;
-                nameref    = fstore.collection("Form").document("name");
-                sectionref = fstore.collection("Form").document("Section");
-                rollref    = fstore.collection("Form").document("Rollno");
+
 
                 FirebaseUser fuser = fAuth.getCurrentUser();
                 userID = fAuth.getCurrentUser().getUid();
-                DocumentReference documentReference = fstore.collection("AcceptedUsers").document(userID);
+                DocumentReference documentReference = fstore.collection("Form").document(userID);
                 Map<String,Object> user = new HashMap<>();
-                user.put("Rollno",rollref);
-                user.put("Section",sectionref);
-                user.put("Name",nameref);
+                user.put("Status", "Accepted");
                 documentReference.set(user).addOnSuccessListener(aVoid -> {
-                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
+                    Toast.makeText(recycler.this, "Request Accepted", Toast.LENGTH_SHORT).show();
+
                 });
 
             });

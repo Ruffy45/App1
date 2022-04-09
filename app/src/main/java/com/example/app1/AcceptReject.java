@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -24,44 +26,49 @@ public class AcceptReject extends AppCompatActivity {
     FirebaseFirestore fstore;
     DocumentReference rollref,nameref,sectionref;
     String userID;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accept_reject);
+        userID = fAuth.getCurrentUser().getUid();
 
+       // db = FirebaseFirestore.getInstance();
         acceptBtn = findViewById(R.id.button);
         rejectBtn = findViewById(R.id.button6);
-       DocumentReference  nameref    = fstore.collection("Form").document("name");
-        DocumentReference sectionref = fstore.collection("Form").document("Section");
-       DocumentReference  rollref    = fstore.collection("Form").document("Rollno");
+       //DocumentReference  nameref    = fstore.collection("Form").document("name");
+        //DocumentReference sectionref = fstore.collection("Form").document("Section");
+       //DocumentReference  rollref    = fstore.collection("Form").document("Rollno");
 
 
         acceptBtn.setOnClickListener(view -> {
 
+            Toast.makeText(AcceptReject.this, "Request Accepted", Toast.LENGTH_SHORT).show();
 
-            String s1,s2,s3;
-            s1 = "Bullfrog";
-            s2 = "Section-A";
-            s3 = "Don't remember";
+         //   String s1,s2,s3;
+           // s1 = "Bullfrog";
+            //s2 = "Section-A";
+            //s3 = "Don't remember";
 
-            userID = fAuth.getCurrentUser().getUid();
-            DocumentReference documentReference = fstore.collection("StudentUsers").document(userID);
-            Map<String,Object> user = new HashMap<>();
-            user.put("Name",s1);
-            user.put("Section",s2);
-            user.put("RollNo",s3);
-            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.d(TAG, "onFailure: " + e.toString());
-                }
-            });
+
+            //CollectionReference cities = db.collection("AcceptedUsers");
+            //DocumentReference documentReference = fstore.collection("AcceptedUsers").document(userID);
+            //Map<String,Object> user = new HashMap<>();
+            //user.put("Name","Ruffy");
+            //user.put("Section","A");
+            //user.put("RollNo","550");
+            //documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            //    @Override
+             //   public void onSuccess(Void aVoid) {
+              //      Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
+              //  }
+            //}).addOnFailureListener(new OnFailureListener() {
+             //   @Override
+              //  public void onFailure(@NonNull Exception e) {
+              //      Log.d(TAG, "onFailure: " + e.toString());
+              //  }
+              //});
 
 
         });

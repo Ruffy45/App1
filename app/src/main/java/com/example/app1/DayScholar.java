@@ -3,9 +3,11 @@ package com.example.app1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -68,6 +70,8 @@ public class DayScholar extends AppCompatActivity {
             if (phone.length() < 6) {
                 dPhone.setError("Password must be greater than 6 characters");
             }
+
+
             //next line gets the user id (UID)
             userID = fAuth.getCurrentUser().getUid();
             DocumentReference documentReference = fstore.collection("Form").document(userID);
@@ -77,17 +81,25 @@ public class DayScholar extends AppCompatActivity {
             user.put("Section", section);
             user.put("PhNo", phone);
             user.put("Reason", reason);
+            user.put("Status", " ");
             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Log.d(TAG, "onSuccess: user Profile is created for " + userID);
                     Toast.makeText(DayScholar.this, "Successfully created.", Toast.LENGTH_SHORT).show();
+                    submitBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(DayScholar.this, qr.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.d(TAG, "onFailure: " + e.toString());
-                }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "onFailure: " + e.toString());
+                    }
 
 
             });

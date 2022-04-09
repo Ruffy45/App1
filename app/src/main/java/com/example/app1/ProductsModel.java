@@ -2,7 +2,7 @@ package com.example.app1;
 
 public class ProductsModel {
 
-    String name,Section,Reason;
+    String name,Section,Reason,firebaseId;
 
     public ProductsModel() {
     }
@@ -11,6 +11,7 @@ public class ProductsModel {
         this.name = name;
         this.Section = section;
         this.Reason = reason;
+        this.firebaseId = firebaseId;
     }
 
     public String getName() {
@@ -29,12 +30,13 @@ public class ProductsModel {
         this.Section = section;
     }
 
-    public String getReason() {
-        return Reason;
-    }
+    public String getReason() { return Reason; }
 
-    public void setReason(String reason) {
-        this.Reason = reason;
-    }
+    public void setReason(String reason) { this.Reason = reason; }
+
+    public String getFirebaseId() {return firebaseId;}
+
+    public void setFirebaseId(String firebaseId) {this.firebaseId = firebaseId;}
 }
+
 

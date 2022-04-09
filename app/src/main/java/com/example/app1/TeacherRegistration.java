@@ -136,7 +136,7 @@ public class TeacherRegistration extends AppCompatActivity {
                                 Log.d(TAG, "onFailure: " + e.toString());
                             }
                         });
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),recycler.class));
 
                     }else {
                         Toast.makeText(TeacherRegistration.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

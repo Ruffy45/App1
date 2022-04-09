@@ -44,13 +44,13 @@ public class GuardLogin extends AppCompatActivity {
             }
 
             if(password.length() < 6){
-                mPassword.setError("Password Must be >= 6 Characters");
+                mPassword.setError("Incorrect Password");
                 return;
             }
             progressBar.setVisibility(View.VISIBLE);
             if(username.equals(s1) && password.equals(s2)){
                 Toast.makeText(GuardLogin.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), recycler.class));
+                startActivity(new Intent(getApplicationContext(), NewRecycler.class));
                 return;
             }
             else {

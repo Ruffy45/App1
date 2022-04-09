@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App1">
         <activity
+            android:name=".TeacherHome"
+            android:exported="false" />
+        <activity
+            android:name=".StudentHome"
+            android:exported="false" />
+        <activity
+            android:name=".AdminLogin"
+            android:exported="false" />
+        <activity
+            android:name=".qr"
+            android:exported="false" />
+        <activity
             android:name=".AcceptReject"
             android:exported="false" />
         <activity
@@ -26,25 +38,21 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".NotificationTest"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".GuardLogin"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TeacherRegistration"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".TeacherHome" />
         <activity
             android:name=".Login"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".StudentHome" />
         <activity
             android:name=".Registration"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".StudentHome" />
         <activity
             android:name=".DayScholar"
             android:exported="false"
@@ -52,7 +60,7 @@
         <activity
             android:name=".TeacherLogin"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".TeacherHome" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
